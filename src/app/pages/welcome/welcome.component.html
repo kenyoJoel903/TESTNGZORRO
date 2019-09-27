@@ -1,0 +1,23 @@
+<app-new-user
+    [usuario]="usuarioSeleccionado"
+    (guardar)="onGuardado($event)">
+</app-new-user>
+
+<nz-table #basicTable [nzData]="usuarios">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.nombre }}</td>
+            <td>{{ data.edad }}</td>
+            <td>
+               dd
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

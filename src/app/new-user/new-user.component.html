@@ -1,0 +1,32 @@
+<button nz-button [nzType]="'primary'" (click)="openModalEdicion()"><span>Show Modal</span></button>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <form nz-form [nzLayout]="'inline'" [formGroup]="form" (ngSubmit)="guardar()">
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Ingrese id!">
+                <nz-input-group nzPrefixIcon="user">
+                    <input formControlName="id" nz-input placeholder="Id" type="number" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Ingrese nombre!">
+                <nz-input-group nzPrefixIcon="user">
+                    <input formControlName="nombre" nz-input placeholder="Nombre" type="text" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="Ingrese edad!">
+                <nz-input-group nzPrefixIcon="user">
+                    <input formControlName="edad" nz-input placeholder="edad" type="number" />
+                </nz-input-group>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="!validateForm.valid">Guardar</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-modal>
